@@ -1,3 +1,4 @@
+
 document.getElementById('addItemButton').addEventListener('click', function() {
     const itemsContainer = document.getElementById('itemsContainer');
     
