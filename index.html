@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muunnin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Annosmäärä muunnin</h1>
+        <h3>Reseptin nimi</h3>
+        <input type="text" id="recipeName" placeholder="Syötä reseptin nimi">
+        
+        
+        <h3>Annokset reseptissä
+            <input type="number" id="inputValue" placeholder="Annokset reseptissä">
+        
+        
+        <p>Haluttu annosmäärä
+            <input type="number" id="inputValue2" placeholder="Haluttu reseptin koko">
+        </h3>
+
+        <h3>Ainekset</h3>
+        <div id="itemsContainer"> <!-- Container for items -->
+            <div class="itemGroup"> <!-- Group for item fields -->
+                <input type="text" class="itemName" placeholder="Item Name"> <!-- Name field -->
+                <input type="number" class="itemAmount" placeholder="Amount"> <!-- Amount field -->
+                <input type="text" class="itemUnit" placeholder="Unit"> <!-- Unit field -->
+            </div>
+        </div>
+
+        <button id="addItemButton">Lisää toinen tuote</button> <!-- Button to add fields -->
+        <button id="convertButton">Muunna</button>
+        <p id="result"></p>
+        <button id="downloadButton" style="display: none;">Lataa</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
