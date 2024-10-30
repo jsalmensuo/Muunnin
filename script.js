@@ -37,7 +37,7 @@ document.getElementById('convertButton').addEventListener('click', function() {
         const convertedAmount = itemAmount * factor; // Calculate converted amount
 
         // Store result
-        results.push(` ${convertedAmount} ${itemUnit} ${itemName.value}`);
+        results.push(` ${recipeName} ${convertedAmount} ${itemUnit} ${itemName.value}`);
     });
 
     // Display all results
