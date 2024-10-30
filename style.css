@@ -23,6 +23,20 @@ input {
     box-sizing: border-box; /* Ensure padding is included in width calculation */
 }
 
+.itemAmount {
+    margin-top: 10px;
+    padding: 10px;
+    width: calc(100% - 90px); /* Adjust width to fit within container */
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+.itemUnit {
+    margin-top: 10px;
+    padding: 10px;
+    width: 17%; /* Adjust width to fit within container */
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
 .itemGroup {
     margin-bottom: 20px; /* Space between item groups */
 }

@@ -7,9 +7,15 @@ document.getElementById('addItemButton').addEventListener('click', function() {
 
     // Create new input fields for item name, amount, and unit
     newItemDiv.innerHTML = `
-        <input type="text" class="itemName" placeholder="Item Name">
-        <input type="number" class="itemAmount" placeholder="Amount">
-        <input type="text" class="itemUnit" placeholder="Unit">
+        <input type="text" class="itemName" placeholder="Ainesosa">
+        <input type="number" class="itemAmount" placeholder="Määrä">
+        <select class="itemUnit">
+            <option value="kpl">kpl</option>
+                <option value="g">g</option>
+                <option value="tl">tl</option>
+                <option value="rkl">rkl</option>
+                <option value="dl">dl</option>
+        </select>
     `;
     
     itemsContainer.appendChild(newItemDiv); // Append the new item group to the container
@@ -35,7 +41,7 @@ document.getElementById('convertButton').addEventListener('click', function() {
 
         // Conversion logic
         const factor = inputValue2 / inputValue; // Calculate conversion factor
-        const convertedAmount = itemAmount * factor; // Calculate converted amount
+        const convertedAmount = Math.round(itemAmount * factor); // Calculate converted amount
 
         // Store result
         results.push(` ${convertedAmount} ${itemUnit} ${itemName.value}`);
