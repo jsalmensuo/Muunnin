@@ -1,4 +1,3 @@
-
 document.getElementById('addItemButton').addEventListener('click', function() {
     const itemsContainer = document.getElementById('itemsContainer');
     
@@ -38,7 +37,7 @@ document.getElementById('convertButton').addEventListener('click', function() {
         const convertedAmount = itemAmount * factor; // Calculate converted amount
 
         // Store result
-        results.push(`${itemName.value}: ${convertedAmount} ${itemUnit}`);
+        results.push(` ${convertedAmount} ${itemUnit} ${itemName.value}`);
     });
 
     // Display all results
@@ -48,10 +47,16 @@ document.getElementById('convertButton').addEventListener('click', function() {
     const downloadButton = document.getElementById('downloadButton');
     downloadButton.style.display = 'block';
     downloadButton.onclick = function() {
+        const recipeName = document.getElementById('recipeName').value; // Get the recipe name
+        const inputValue = document.getElementById('inputValue').value; // Get the number of servings
+    
+        // Create a filename using the recipe name and input value
+        const filename = `${recipeName}.txt`;
+    
         const blob = new Blob([results.join('\n')], { type: 'text/plain' });
         const link = document.createElement('a');
         link.href = window.URL.createObjectURL(blob);
-        link.download = 'result.txt';
+        link.download = filename; // Use the dynamic filename
         link.click();
     };
 });
