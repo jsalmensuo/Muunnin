@@ -13,6 +13,7 @@ document.getElementById('addItemButton').addEventListener('click', function() {
     `;
     
     itemsContainer.appendChild(newItemDiv); // Append the new item group to the container
+    
 });
 
 document.getElementById('convertButton').addEventListener('click', function() {
@@ -37,7 +38,7 @@ document.getElementById('convertButton').addEventListener('click', function() {
         const convertedAmount = itemAmount * factor; // Calculate converted amount
 
         // Store result
-        results.push(` ${recipeName} ${convertedAmount} ${itemUnit} ${itemName.value}`);
+        results.push(` ${convertedAmount} ${itemUnit} ${itemName.value}`);
     });
 
     // Display all results
