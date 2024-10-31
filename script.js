@@ -41,10 +41,22 @@ document.getElementById('convertButton').addEventListener('click', function() {
 
         // Conversion logic
         const factor = inputValue2 / inputValue; // Calculate conversion factor
-        const convertedAmount = Math.round(itemAmount * factor); // Calculate converted amount
+        const convertedAmount = itemAmount * factor; // Calculate converted amount
+        let convertedUnit = itemUnit; // Initialize with the original unit
 
+        // Check for modifiers based on the unit and apply them
+        if (itemUnit === "tl") {
+            const rklAmount = (convertedAmount / 3).toFixed(1);
+            const dlAmount = (convertedAmount / 20).toFixed(1);
+            convertedUnit = ` ${itemUnit} > ${rklAmount} rkl > ${dlAmount} dl  `;
+          } else if (itemUnit === "rkl") {
+            const dlAmount = (convertedAmount * 0.15).toFixed(1);
+            convertedUnit = ` ${itemUnit} ${dlAmount} dl`;
+          }
+        
+        
         // Store result
-        results.push(` ${convertedAmount} ${itemUnit} ${itemName.value}`);
+        results.push(`${convertedAmount} ${convertedUnit} ${itemName.value}`);
     });
 
     // Display all results
